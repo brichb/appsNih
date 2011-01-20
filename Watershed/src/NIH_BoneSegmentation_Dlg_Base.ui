@@ -1,0 +1,2992 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>NIH_BoneSegmentation_Dlg_Base</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>NIH_BoneSegmentation_Dlg_Base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>627</width>
+            <height>598</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Bone Segmentation</string>
+    </property>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>320</width>
+                <height>190</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Dicom Data</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>130</y>
+                    <width>30</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Slice:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit_root</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>300</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel_cur_location</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>101</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit_cur_slice</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>130</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QSlider">
+            <property name="name">
+                <cstring>slider_opacity</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>200</x>
+                    <y>160</y>
+                    <width>110</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="mouseTracking">
+                <bool>true</bool>
+            </property>
+            <property name="pageStep">
+                <number>1</number>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel8</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>150</x>
+                    <y>160</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Opacity</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>checkBox_painting</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>160</y>
+                    <width>60</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Painting</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_save_s</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>40</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Save S</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_load_s</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>60</x>
+                    <y>40</y>
+                    <width>40</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Load S</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_save_seg</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>40</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Save Seg</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_load</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>200</x>
+                    <y>40</y>
+                    <width>40</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Load</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>80</y>
+                    <width>49</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Contrast:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>100</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Hi</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>80</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Lo</string>
+            </property>
+        </widget>
+        <widget class="QSlider">
+            <property name="name">
+                <cstring>slider_contrast_lo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>80</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>buttonGroup_view</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>250</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>90</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>View</string>
+            </property>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton_view_sagittal</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>40</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Sagittal</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton_view_coronal</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>60</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Coronal</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton_view_axial</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>20</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Axial</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QSlider">
+            <property name="name">
+                <cstring>slider_contrast_hi</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>104</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="QSlider">
+            <property name="name">
+                <cstring>slider_slice</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>130</y>
+                    <width>200</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="mouseTracking">
+                <bool>true</bool>
+            </property>
+            <property name="pageStep">
+                <number>1</number>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+      <widget class="QCheckBox">
+        <property name="name">
+          <cstring>checkBox_overlay</cstring>
+        </property>
+        <property name="geometry">
+          <rect>
+            <x>80</x>
+            <y>160</y>
+            <width>60</width>
+            <height>20</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>Overlay</string>
+        </property>
+        </widget>
+      <widget class="QCheckBox">
+        <property name="name">
+          <cstring>checkBox_woverlay</cstring>
+        </property>
+        <property name="geometry">
+          <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>40</width>
+            <height>20</height>
+          </rect>
+        </property>
+        <property name="text">
+          <string>WS</string>
+        </property>
+      </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox10</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>200</y>
+                <width>321</width>
+                <height>90</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Process</string>
+        </property>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_pre_process</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Pre Process</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_spinal_cord</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Spinal Cord</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_process</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>50</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Process</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Threshold:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit_bone_thresh</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_met_detection</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>50</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Met Detect</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Template:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit_template_mode</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>50</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_close</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>260</x>
+                <y>541</y>
+                <width>60</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Close</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_help</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>260</x>
+                <y>482</y>
+                <width>60</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Help</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel_info</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>482</y>
+                <width>241</width>
+                <height>80</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="text">
+            <string>info</string>
+        </property>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox11</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>340</x>
+                <y>10</y>
+                <width>280</width>
+                <height>550</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Project</string>
+        </property>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit_batch_start</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>180</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit_batch_end</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>226</x>
+                    <y>20</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_load_project</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Load Project</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_batch_project</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>94</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Batch Project</string>
+            </property>
+        </widget>
+        <widget class="QListBox">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>listBox_study_entry</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>260</width>
+                    <height>480</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_refresh</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>260</x>
+                <y>510</y>
+                <width>60</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Refresh</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_BMD_ROI</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>570</y>
+                <width>60</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>BMD ROI</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_surface_iv</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>570</y>
+                <width>70</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Surface_IV</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_Vertebra_Seg</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>240</x>
+                <y>570</y>
+                <width>60</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Vertebra</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>CommandLine</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>570</y>
+                <width>80</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Command</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton_Rib_Detection</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>570</y>
+                <width>60</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Rib</string>
+        </property>
+    </widget>
+    <widget class="QTabWidget">
+        <property name="name">
+            <cstring>tabWidget4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>290</y>
+                <width>320</width>
+                <height>190</height>
+            </rect>
+        </property>
+        <property name="tabShape">
+            <enum>Rounded</enum>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>BoneMet</string>
+            </attribute>
+            <widget class="QButtonGroup">
+                <property name="name">
+                    <cstring>buttonGroup_zoom</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>10</y>
+                        <width>60</width>
+                        <height>90</height>
+                    </rect>
+                </property>
+                <property name="title">
+                    <string>Zoom</string>
+                </property>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>radioButton_zoom4</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>60</y>
+                            <width>40</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>X4</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>radioButton_zoom2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>40</y>
+                            <width>40</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>X2</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>radioButton_zoom1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>40</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>X1</string>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>10</y>
+                        <width>49</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Lesion</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>40</y>
+                        <width>49</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Detection</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_2_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>70</y>
+                        <width>49</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>2D Det</string>
+                </property>
+            </widget>
+          <widget class="QLabel">
+            <property name ="name">
+              <cstring>textLabel1_2_2_2_2</cstring>
+            </property>
+            <property name="geometry">
+              <rect>
+                <x>10</x>
+                <y>140</y>
+                <width>49</width>
+                <height>20</height>
+              </rect>
+            </property>
+            <property name="text">
+              <string>Cutoff</string>
+            </property>
+          </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_save_feature</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>40</y>
+                        <width>80</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Save Feature</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_classification</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>70</y>
+                        <width>80</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Classification</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_watershed</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>108</y>
+                        <width>80</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Watershed</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_surface</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>108</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Surface</string>
+                </property>
+            </widget>
+            <widget class="QSpinBox">
+                <property name="name">
+                    <cstring>spinBox_lesion</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>10</y>
+                        <width>55</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QSpinBox">
+                <property name="name">
+                    <cstring>spinBox_detection</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>40</y>
+                        <width>55</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QSpinBox">
+                <property name="name">
+                    <cstring>spinBox_detection_2D</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>70</y>
+                        <width>55</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+          <widget class="QSpinBox">
+            <property name="name">
+              <cstring>spinBox_cutoff</cstring>
+            </property>
+            <property name="geometry">
+              <rect>
+                <x>60</x>
+                <y>140</y>
+                <width>55</width>
+                <height>20</height>
+              </rect>
+            </property>
+          </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_spine_partition</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>108</y>
+                        <width>50</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Partition</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_bounding_box</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>10</y>
+                        <width>60</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Box</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_cord</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>80</x>
+                        <y>110</y>
+                        <width>50</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Cord</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>LiveWire</string>
+            </attribute>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel_1_4_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>219</x>
+                        <y>43</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Cool Len:</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_lw_use_levelset</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>100</x>
+                        <y>80</y>
+                        <width>90</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Use LevelSet</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_cool_length</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>279</x>
+                        <y>43</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>50</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel_1_4_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>219</x>
+                        <y>73</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>LS_weight:</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>219</x>
+                        <y>13</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Search R:</string>
+                </property>
+            </widget>
+            <widget class="QButtonGroup">
+                <property name="name">
+                    <cstring>costFunctions</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>100</x>
+                        <y>10</y>
+                        <width>110</width>
+                        <height>70</height>
+                    </rect>
+                </property>
+                <property name="title">
+                    <string>Cost Function</string>
+                </property>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>testGradientMagCost</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>40</y>
+                            <width>88</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Norm Gradient</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>testGradientMagCost_org</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>88</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Gradient</string>
+                    </property>
+                    <property name="checked">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_levelset_weight</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>280</x>
+                        <y>74</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>0.3</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel_1_4_2_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>218</x>
+                        <y>100</y>
+                        <width>55</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>TR_weight:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_training_weight</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>280</x>
+                        <y>101</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>0.5</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel_1_4_2_2_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>218</x>
+                        <y>124</y>
+                        <width>55</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>TR_bin:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_training_bin</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>280</x>
+                        <y>125</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>1</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_search_range</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>279</x>
+                        <y>13</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>20</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_write_point</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>120</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Write Point</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_read_point</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>70</x>
+                        <y>120</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Read Point</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_lw_batch</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>120</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Batch</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_lw_directional_search</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>50</y>
+                        <width>83</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Dir Search</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>useTraining</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>30</y>
+                        <width>83</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Use Training</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>useLiveWire</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>10</y>
+                        <width>83</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Use Livewire</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_record_point</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>90</y>
+                        <width>85</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Record Point</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>TabPage</cstring>
+            </property>
+            <attribute name="title">
+                <string>TestImage</string>
+            </attribute>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>extra_circle</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>10</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>excirc</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_5</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>40</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>BG:</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_5_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>70</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Contrast</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_5_3_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>130</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Blur</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_background</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>40</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>50</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_contrast</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>70</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>50</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_blur</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>130</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>3</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_5_3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>100</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Noise</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_5_3_3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>110</x>
+                        <y>100</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>CNR</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_noise</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>60</x>
+                        <y>100</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>20</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_lw_CNR</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>100</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>extra_circle_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>80</x>
+                        <y>10</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>circle2</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>extra_square</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>10</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>square</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_show_active_contour</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>230</x>
+                        <y>10</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Active</string>
+                </property>
+                <property name="checked">
+                    <bool>false</bool>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>testImg</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>80</y>
+                        <width>70</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Test Img</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_smooth_contour</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>120</y>
+                        <width>70</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Smooth</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>TabPage</cstring>
+            </property>
+            <attribute name="title">
+                <string>LevelSet</string>
+            </attribute>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>40</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Diff It:</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_ls_just_levelset</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>9</x>
+                        <y>10</y>
+                        <width>90</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Just LevelSet</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>100</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Diff Time:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_diffusion_timestep</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>70</x>
+                        <y>100</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>0.125</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>70</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Diff Condu:</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_3_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>124</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Sigma</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_4_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>122</x>
+                        <y>44</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Lap Curv:</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_4_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>120</x>
+                        <y>70</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Lap Prop:</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_4_2_3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>119</x>
+                        <y>121</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Lap Error:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_laplacian_advection</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>180</x>
+                        <y>95</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>1.0</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_4_2_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>120</x>
+                        <y>95</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Lap Adev:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_diffusion_iteration</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>70</x>
+                        <y>40</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>10</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_diffusion_conductance</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>70</x>
+                        <y>70</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>10</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_laplacian_max_error</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>179</x>
+                        <y>121</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>0.002</string>
+                </property>
+            </widget>
+            <widget class="QButtonGroup">
+                <property name="name">
+                    <cstring>buttonGroup7</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>230</x>
+                        <y>10</y>
+                        <width>80</width>
+                        <height>60</height>
+                    </rect>
+                </property>
+                <property name="title">
+                    <string>LS_Func</string>
+                </property>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>radioButton_ls_func_laplacian</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>12</x>
+                            <y>14</y>
+                            <width>50</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="focusPolicy">
+                        <enum>TabFocus</enum>
+                    </property>
+                    <property name="text">
+                        <string>Lap</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>radioButton_ls_func_geodesic</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>12</x>
+                            <y>34</y>
+                            <width>50</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Geodesic</string>
+                    </property>
+                    <property name="checked">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_gradient_sigma</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>70</x>
+                        <y>124</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>1</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_laplacian_curvature</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>182</x>
+                        <y>44</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>20</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_laplacian_propagation</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>180</x>
+                        <y>70</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>0.5</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_ls_smooth</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>90</y>
+                        <width>60</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Smooth</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_4</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>122</x>
+                        <y>14</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Lap It:</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_4_2_4_3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>232</x>
+                        <y>114</y>
+                        <width>41</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>LS layer:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_layer</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>280</x>
+                        <y>115</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>3</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit_ls_laplacian_iteration</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>180</x>
+                        <y>15</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>100</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_ls_show_init_model</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>70</y>
+                        <width>60</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>ShowInit</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>TabPage</cstring>
+            </property>
+            <attribute name="title">
+                <string>ALM</string>
+            </attribute>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_ALM_Mode_cur</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>10</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>cur</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_3_2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>10</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Model</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_3_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>80</x>
+                        <y>10</y>
+                        <width>30</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>PDM</string>
+                </property>
+            </widget>
+            <widget class="QSpinBox">
+                <property name="name">
+                    <cstring>spinBox_ALM_Mode</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>110</x>
+                        <y>10</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QSpinBox">
+                <property name="name">
+                    <cstring>spinBox_ALM_Model</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>32</x>
+                        <y>10</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Mean_ALM</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>80</x>
+                        <y>70</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Mean ALM</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_ALM_Mode_range</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>200</x>
+                        <y>10</y>
+                        <width>40</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>range</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkBox_flag_GT</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>172</x>
+                        <y>73</y>
+                        <width>60</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>GroundT</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Intanstiate_ALM</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>70</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Instan ALM</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Build_ALM</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>10</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Build ALM</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Load_Organ</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>40</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>LoadOrgan</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Save_ALM_Model</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>70</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>SaveModel</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Load_ALM</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>80</x>
+                        <y>100</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Load ALM</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Save_ALM</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>100</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Save ALM</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Load_ALM_Multi_Model</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>150</x>
+                        <y>100</y>
+                        <width>80</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>LoadMultiModel</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_Load_ALM_Model</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>238</x>
+                        <y>100</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>LoadModel</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_ALM_Batch</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>108</x>
+                        <y>130</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Batch</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>pushButton_ALM_Refinement</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>9</x>
+                        <y>130</y>
+                        <width>60</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Refine</string>
+                </property>
+            </widget>
+            <widget class="QSlider">
+                <property name="name">
+                    <cstring>slider_ALM_Mode</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>40</y>
+                        <width>200</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="mouseTracking">
+                    <bool>true</bool>
+                </property>
+                <property name="minValue">
+                    <number>1</number>
+                </property>
+                <property name="maxValue">
+                    <number>200</number>
+                </property>
+                <property name="pageStep">
+                    <number>1</number>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+            </widget>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton_load</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_load_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_save_s</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_save_s_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>slider_slice</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>slider_slice_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>slider_opacity</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>slider_opacity_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>checkBox_overlay</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>checkBox_overlay_stateChanged(int)</slot>
+    </connection>
+    <connection>
+      <sender>checkBox_woverlay</sender>
+      <signal>stateChanged(int)</signal>
+      <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+      <slot>checkBox_woverlay_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_help</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_help_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_refresh</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_refresh_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_close</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_close_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_load_project</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_load_project_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_batch_project</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_batch_project_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>listBox_study_entry</sender>
+        <signal>clicked(QListBoxItem*)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>listBox_study_entry_clicked(QListBoxItem*)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_load_s</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_load_s_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>slider_contrast_lo</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>slider_contrast_lo_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>slider_contrast_hi</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>slider_contrast_hi_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_pre_process</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_pre_process_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_spinal_cord</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_spinal_cord_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_met_detection</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_met_detection_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkBox_painting</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>checkBox_painting_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_save_seg</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_save_seg_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_process</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_process_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>radioButton_view_axial</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>radioButton_view_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton_view_sagittal</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>radioButton_view_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton_view_coronal</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>radioButton_view_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>slider_slice</sender>
+        <signal>sliderMoved(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>slider_slice_sliderMoved(int)</slot>
+    </connection>
+    <connection>
+        <sender>useLiveWire</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>useLiveWire_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>useTraining</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>useTraining_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>testImg</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>testImg_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_write_point</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_write_point_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_read_point</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_read_point_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_lw_batch</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_lw_batch_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_smooth_contour</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_smooth_contour_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_surface_iv</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_surface_iv_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_save_feature</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_save_feature_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_classification</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_classification_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_watershed</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_watershed_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_spine_partition</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_spine_partition_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_cord</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_cord_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_surface</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_surface_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>radioButton_zoom1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>radioButton_zoom_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton_zoom2</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>radioButton_zoom_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton_zoom4</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>radioButton_zoom_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>spinBox_lesion</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>spinBox_lesion_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>spinBox_detection</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>spinBox_detection_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>spinBox_detection_2D</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>spinBox_detection_2D_valueChanged(int)</slot>
+    </connection>
+  <connection>
+    <sender>spinBox_cutoff</sender>
+    <signal>valueChanged(int)</signal>
+    <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+    <slot>spinBox_cutoff_valueChanged(int)</slot>
+  </connection>
+    <connection>
+        <sender>pushButton_BMD_ROI</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_BMD_ROI_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkBox_bounding_box</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>checkBox_bounding_box_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Rib_Detection</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Rib_Detection_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Vertebra_Seg</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Vertebra_Seg_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>CommandLine</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>CommandLine_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Build_ALM</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Build_ALM_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Load_Organ</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Load_Organ_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Save_ALM_Model</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Save_ALM_Model_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Load_ALM_Model</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Load_ALM_Model_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Load_ALM_Multi_Model</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Load_ALM_Multi_Model_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkBox_record_point</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>checkBox_record_point_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>checkBox_ls_show_init_model</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>checkBox_ls_show_init_model_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Mean_ALM</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Mean_ALM_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>spinBox_ALM_Mode</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>spinBox_ALM_Mode_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>slider_ALM_Mode</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>slider_ALM_Mode_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>spinBox_ALM_Model</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>spinBox_ALM_Model_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Intanstiate_ALM</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Intanstiate_ALM_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Save_ALM</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Save_ALM_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_Load_ALM</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_Load_ALM_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkBox_flag_GT</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>checkBox_flag_GT_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_ALM_Batch</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_ALM_Batch_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_ALM_Refinement</sender>
+        <signal>clicked()</signal>
+        <receiver>NIH_BoneSegmentation_Dlg_Base</receiver>
+        <slot>pushButton_ALM_Refinement_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">NIH_BoneSegmentation_Dlg_Base.ui.h</include>
+</includes>
+<slots>
+    <slot>pushButton_load_s_clicked()</slot>
+    <slot>pushButton_load_clicked()</slot>
+    <slot>pushButton_save_s_clicked()</slot>
+    <slot>slider_slice_valueChanged( int )</slot>
+    <slot>slider_opacity_valueChanged( int )</slot>
+    <slot>checkBox_overlay_stateChanged( int )</slot>
+    <slot>checkBox_woverlay_stateChanged( int )</slot>
+    <slot>pushButton_help_clicked()</slot>
+    <slot>pushButton_refresh_clicked()</slot>
+    <slot>pushButton_close_clicked()</slot>
+    <slot>pushButton_load_project_clicked()</slot>
+    <slot>pushButton_batch_project_clicked()</slot>
+    <slot>listBox_study_entry_clicked( QListBoxItem * )</slot>
+    <slot>slider_contrast_lo_valueChanged( int )</slot>
+    <slot>slider_contrast_hi_valueChanged( int )</slot>
+    <slot>pushButton_pre_process_clicked()</slot>
+    <slot>pushButton_surface_clicked()</slot>
+    <slot>pushButton_spinal_cord_clicked()</slot>
+    <slot>pushButton_met_detection_clicked()</slot>
+    <slot>spinBox_lesion_valueChanged( int )</slot>
+    <slot>spinBox_detection_valueChanged( int )</slot>
+    <slot>checkBox_painting_stateChanged( int )</slot>
+    <slot>pushButton_save_seg_clicked()</slot>
+    <slot>checkBox_bounding_box_stateChanged( int )</slot>
+    <slot>spinBox_detection_2D_valueChanged( int )</slot>
+  <slot>spinBox_cutoff_valueChanged(int)</slot>
+    <slot>pushButton_save_feature_clicked()</slot>
+    <slot>pushButton_classification_clicked()</slot>
+    <slot>pushButton_process_clicked()</slot>
+    <slot>pushButton_cord_clicked()</slot>
+    <slot>pushButton_watershed_clicked()</slot>
+    <slot>radioButton_view_toggled( bool )</slot>
+    <slot>slider_slice_sliderMoved( int )</slot>
+    <slot>radioButton_zoom_toggled( bool )</slot>
+    <slot>pushButton_spine_partition_clicked()</slot>
+    <slot>useLiveWire_stateChanged( int )</slot>
+    <slot>useTraining_stateChanged( int )</slot>
+    <slot>testImg_clicked()</slot>
+    <slot>pushButton_read_point_clicked()</slot>
+    <slot>pushButton_write_point_clicked()</slot>
+    <slot>checkBox_record_point_stateChanged( int )</slot>
+    <slot>pushButton_lw_batch_clicked()</slot>
+    <slot>pushButton_smooth_contour_clicked()</slot>
+    <slot>pushButton_surface_iv_clicked()</slot>
+    <slot>pushButton_BMD_ROI_clicked()</slot>
+    <slot>pushButton_Rib_Detection_clicked()</slot>
+    <slot>pushButton_Vertebra_Seg_clicked()</slot>
+    <slot>CommandLine_clicked()</slot>
+    <slot>pushButton_Build_ALM_clicked()</slot>
+    <slot>pushButton_Load_Organ_clicked()</slot>
+    <slot>pushButton_Save_ALM_Model_clicked()</slot>
+    <slot>pushButton_Load_ALM_Model_clicked()</slot>
+    <slot>pushButton_Load_ALM_Multi_Model_clicked()</slot>
+    <slot>checkBox_ls_show_init_model_stateChanged( int )</slot>
+    <slot>pushButton_Mean_ALM_clicked()</slot>
+    <slot>spinBox_ALM_Mode_valueChanged( int )</slot>
+    <slot>slider_ALM_Mode_valueChanged( int )</slot>
+    <slot>spinBox_ALM_Model_valueChanged( int )</slot>
+    <slot>pushButton_Intanstiate_ALM_clicked()</slot>
+    <slot>pushButton_Save_ALM_clicked()</slot>
+    <slot>pushButton_Load_ALM_clicked()</slot>
+    <slot>checkBox_flag_GT_stateChanged( int )</slot>
+    <slot>pushButton_ALM_Batch_clicked()</slot>
+    <slot>pushButton_ALM_Refinement_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
